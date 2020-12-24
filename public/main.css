@@ -55,7 +55,7 @@ body {
 
 .title h2 {
   margin-top: 0.5em;
-  margin-bottom: 3em;
+  margin-bottom: 1.5em;
 }
 
 .icons {
@@ -93,11 +93,15 @@ body {
 
 #toggle-theme {
   position: absolute;
-  bottom: 32px;
+  bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
 
   font-family: "Roboto", sans-serif;
+}
+
+#toggle-theme p {
+  margin: 0 0 10px 0;
 }
 
 /* 
