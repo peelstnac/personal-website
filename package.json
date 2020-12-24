@@ -1,0 +1,26 @@
+{
+  "name": "personal-website",
+  "version": "1.0.0",
+  "description": "My personal website.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node -r esm server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peelstnac/personal-website.git"
+  },
+  "author": "peelstnac",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/peelstnac/personal-website/issues"
+  },
+  "homepage": "https://github.com/peelstnac/personal-website#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.6"
+  }
+}
