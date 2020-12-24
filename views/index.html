@@ -5,8 +5,64 @@
         <meta name="author" content="Freeman Cheng">
         <meta name="description" content="Freeman Cheng's personal website.">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
+
+        <link rel="stylesheet" href="main.css">
         
+        <script src="https://kit.fontawesome.com/7a9b915c3d.js" crossorigin="anonymous"></script>
+        <script src="js/loaded.js"></script>
+        <script src="js/toggleTheme.js"></script>
+    </head>
+    <body onload="loaded()">
+        <div id="front-title-page" class="title-page light">
+            <div class="title">
+                <h1>
+                    Hi, my name is Freeman Cheng.
+                </h1>
+                <h2>
+                    Welcome to my website.
+                </h2>                  
+            </div>        
+            <div class="icons">
+                <div class="icon">
+                    <span>
+                        <i class="far fa-file-pdf fa-3x"></i>
+                    </span>
+                    <p>
+                        Resume
+                    </p>
+                </div>
+                <div class="icon">
+                    <span>
+                        <i class="far fa-folder-open fa-3x"></i>
+                    </span>
+                    <p>
+                        Projects
+                    </p>
+                </div>
+                <div class="icon">
+                    <span>
+                        <i class="fab fa-github-square fa-3x"></i>
+                    </span>
+                    <p>
+                        Github
+                    </p>
+                </div>
+                <div class="icon">
+                    <span>
+                        <i class="far fa-clipboard fa-3x"></i>
+                    </span>
+                    <p>
+                        Notes
+                    </p>
+                </div>
+            </div>
+            
+            <div id="toggle-theme">
+                <label class="switch">
+                    <input id="toggle-theme-input" type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </div>
     </body>
 </html>
