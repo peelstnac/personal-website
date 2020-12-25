@@ -1,24 +1,13 @@
-.no-transition {
-  transition: none !important;
-}
-
-.transition-fade {
-  transition: 1s;
-  opacity: 1;
-}
-
-html.is-animating .transition-fade {
-  opacity: 0;
-}
-
 .light {
-  --bg-color: #fffdfd;
-  --h1-color: #1b1b1b;
+  --color-primary: #fffdfd;
+  --color-secondary: #1b1b1b;
+  --color-hover: #e34234;
 }
 
 .dark {
-  --bg-color: #1b1b1b;
-  --h1-color: #fffdfd;
+  --color-primary: #1b1b1b;
+  --color-secondary: #fffdfd;
+  --color-hover: #f0e100;
 }
 
 /* 
@@ -66,21 +55,21 @@ Slider from w3schools.
   width: 26px;
   left: 4px;
   bottom: 4px;
-  background-color: var(--bg-color);
+  background-color: var(--color-primary);
   -webkit-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
 }
 
 input:checked + .slider {
-  background-color: #f0e100;
+  background-color: var(--color-hover);
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #f0e100;
+  box-shadow: 0 0 1px var(--color-hover);
 }
 
 input:focus + .slider:before {
-  background-color: var(--bg-color);
+  background-color: var(--color-primary);
 }
 
 input:checked + .slider:before {

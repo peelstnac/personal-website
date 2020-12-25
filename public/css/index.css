@@ -16,7 +16,7 @@ body {
   margin: 0;
   padding: 0;
 
-  background-color: var(--bg-color);
+  background-color: var(--color-primary);
 
   -webkit-transition: opacity 1s ease-in;
   -moz-transition: opacity 1s ease-in;
@@ -35,7 +35,7 @@ body {
 
   font-family: "Rubik", sans-serif;
   text-align: center;
-  color: var(--h1-color);
+  color: var(--color-secondary);
   background-color: inherit;
 
   -webkit-transition: background-color 0.5s ease-in-out, color 1s ease-in-out;
@@ -72,13 +72,13 @@ body {
 }
 
 .icon span {
-  color: var(--h1-color);
+  color: var(--color-secondary);
 
   transition: color 1s ease-in-out;
 }
 
 .icon:hover span {
-  color: #e34234;
+  color: var(--color-hover);
 
   -webkit-transition: color 0.5s ease-in-out;
   -moz-transition: color 0.5s ease-in-out;
