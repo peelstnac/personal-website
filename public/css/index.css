@@ -11,21 +11,13 @@
   }
 }
 
-.light {
-  --bg-color: #fffdfd;
-  --h1-color: #1b1b1b;
-}
-
-.dark {
-  --bg-color: #1b1b1b;
-  --h1-color: #fffdfd;
-}
-
 body {
+  opacity: 0;
   margin: 0;
   padding: 0;
 
-  opacity: 0;
+  background-color: var(--bg-color);
+
   -webkit-transition: opacity 1s ease-in;
   -moz-transition: opacity 1s ease-in;
   -ms-transition: opacity 1s ease-in;
@@ -44,8 +36,12 @@ body {
   font-family: "Rubik", sans-serif;
   text-align: center;
   color: var(--h1-color);
-  background-color: var(--bg-color);
+  background-color: inherit;
 
+  -webkit-transition: background-color 0.5s ease-in-out, color 1s ease-in-out;
+  -moz-transition: background-color 0.5s ease-in-out, color 1s ease-in-out;
+  -ms-transition: background-color 0.5s ease-in-out, color 1s ease-in-out;
+  -o-transition: background-color 0.5s ease-in-out, color 1s ease-in-out;
   transition: background-color 0.5s ease-in-out, color 1s ease-in-out;
 }
 
@@ -70,6 +66,8 @@ body {
   flex-direction: column;
   justify-content: center;
 
+  text-decoration: none;
+  color: inherit;
   cursor: pointer;
 }
 
@@ -82,12 +80,15 @@ body {
 .icon:hover span {
   color: #e34234;
 
+  -webkit-transition: color 0.5s ease-in-out;
+  -moz-transition: color 0.5s ease-in-out;
+  -ms-transition: color 0.5s ease-in-out;
+  -o-transition: color 0.5s ease-in-out;
   transition: color 0.5s ease-in-out;
 }
 
 .icon p {
   margin: 0.5em 3em 0.5em 3em;
-
   font-family: "Roboto", sans-serif;
 }
 
@@ -102,81 +103,4 @@ body {
 
 #toggle-theme p {
   margin: 0 0 10px 0;
-}
-
-/* 
-
-
-
-From w3schools.
-
-
-
- */
-
-/* The switch - the box around the slider */
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
-
-/* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* The slider */
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: 0.5s ease-in-out;
-  transition: 0.5s ease-in-out;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: var(--bg-color);
-  -webkit-transition: 0.5s ease-in-out;
-  transition: 0.5s ease-in-out;
-}
-
-input:checked + .slider {
-  background-color: #f0e100;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #f0e100;
-}
-
-input:focus + .slider:before {
-  background-color: var(--bg-color);
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-}
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
 }

@@ -1,9 +1,11 @@
 import fade from './fade';
-import { loadTheme, toggleTheme } from '../common/theme';
+import { loadTheme } from '../common/theme';
 
 window.addEventListener('load', () => {
     // Load theme
-    loadTheme();
+    loadTheme({
+        'front-title-page': true
+    });
     // Fade in upon load
     fade();
 });

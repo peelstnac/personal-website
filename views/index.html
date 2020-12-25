@@ -6,10 +6,17 @@
         <meta name="description" content="Freeman Cheng's personal website.">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" href="css/main.css">
+        <script src="dist/theme.js"></script>
+        <script src="dist/index.js"></script>
+
+        <link rel="stylesheet" href="css/common.css">
+        <link rel="stylesheet" href="css/index.css">
         
         <script src="https://kit.fontawesome.com/7a9b915c3d.js" crossorigin="anonymous"></script>
-        <script src="dist/index.js"></script>
+
+        <title>
+            Freeman Cheng
+        </title>
     </head>
     <body class="light">
         <div id="front-title-page" class="title-page">
@@ -22,38 +29,38 @@
                 </h2>                  
             </div>        
             <div class="icons">
-                <div class="icon">
+                <a href="/resume" class="icon">
                     <span>
                         <i class="far fa-file-pdf fa-3x"></i>
                     </span>
                     <p>
                         Resume
                     </p>
-                </div>
-                <div class="icon">
+                </a>
+                <a href="/projects" class="icon">
                     <span>
                         <i class="far fa-folder-open fa-3x"></i>
                     </span>
                     <p>
                         Projects
                     </p>
-                </div>
-                <div class="icon">
+                </a>
+                <a href="https://github.com/peelstnac" class="icon">
                     <span>
                         <i class="fab fa-github-square fa-3x"></i>
                     </span>
                     <p>
                         Github
                     </p>
-                </div>
-                <div class="icon">
+                </a>
+                <a href="/notes" class="icon">
                     <span>
                         <i class="far fa-clipboard fa-3x"></i>
                     </span>
                     <p>
                         Notes
                     </p>
-                </div>
+                </a>
             </div>
             
             <div id="toggle-theme">
@@ -61,7 +68,7 @@
                     Toggle theme!
                 </p>
                 <label class="switch">
-                    <input id="toggle-theme-input" type="checkbox">
+                    <input id="toggle-theme-input" type="checkbox" autocomplete="off">
                     <span class="slider round"></span>
                 </label>
             </div>
