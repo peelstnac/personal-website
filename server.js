@@ -3,32 +3,47 @@
 import dotenv from 'dotenv';
 import express from 'express';
 import cookieParser from 'cookie-parser';
-import bodyParser from 'body-parser';
 import path from 'path';
+// Import routes.
+import projects from './routes/projects';
 
 dotenv.config();
 const app = express();
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cookieParser());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(express.json());
+
+const themes = [
+    'light',
+    'dark'
+];
+
+/**
+ * Middleware to check for theme attribute in cookie.
+ * If not found or invalid, default to light theme.
+ */
+app.use('/', (req, res, next) => {
+    const { cookies } = req;
+    if (!cookies || !themes.includes(cookies['theme'])) {
+        req.theme = 'light';
+        res.cookie('theme', 'light');
+    } else {
+        req.theme = cookies['theme'];
+    }
+
+    next();
+});
 
 app.get('/', (req, res) => {
+    // Prevent the back button from caching results for consistent themes.
     res.setHeader('Cache-Control', 'no-cache, no-store');
-    const { cookies } = req;
-    if (cookies && cookies['theme'] === 'dark') {
-        res.sendFile(path.join(__dirname, 'views', 'index_dark.html'));
-    } else {
-        // Light theme by default
-        res.cookie('theme', 'light');
-        res.sendFile(path.join(__dirname, 'views', 'index_light.html'));
-    }
+    const suffix = '_' + req.theme + '.html';
+    res.sendFile(path.join(__dirname, 'views', 'index' + suffix));
 });
 
 app.post('/theme', (req, res) => {
-    if (req.body && (req.body['theme'] === 'light' || req.body['theme'] === 'dark')) {
-        console.log(2);
+    if (req.body && themes.includes(req.body['theme'])) {
         res.cookie('theme', req.body['theme']);
         res.sendStatus(200).end();
     } else {
@@ -36,25 +51,8 @@ app.post('/theme', (req, res) => {
     }
 });
 
-
-app.get('/projects', (req, res) => {
-    const { cookies } = req;
-
-    console.log('PROJECT');
-    console.log(cookies);
-    res.setHeader('Cache-Control', 'no-cache, no-store');
-    if (cookies && cookies['theme'] === 'dark') {
-        res.sendFile(path.join(__dirname, 'views', 'project_dark.html'));
-    } else {
-        // Light theme by default
-        res.cookie('theme', 'light');
-        res.sendFile(path.join(__dirname, 'views', 'project_light.html'));
-    }
-});
-
-app.get('/notes', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views', 'projects.html'));
-});
+// Mount routes.
+app.use('/projects', projects);
 
 app.listen(process.env.PORT, () => {
     console.log(`Listening on port ${process.env.PORT}`);
