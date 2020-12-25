@@ -1,5 +1,7 @@
 import fade from './fade';
 import { toggleTheme } from '../common/theme';
+import '../../css/common.css';
+import '../../css/index.css';
 
 window.addEventListener('load', () => {
     // Fade in upon load

@@ -1,1 +1,0 @@
-(self.webpackChunkpersonal_website=self.webpackChunkpersonal_website||[]).push([[176],{701:(e,n,t)=>{"use strict";var s=t(913);window.addEventListener("load",(()=>{document.getElementById("toggle-theme-input").addEventListener("change",(()=>{console.log(1),(0,s.X)()}))}))}},0,[[701,505]]]);

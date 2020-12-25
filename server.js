@@ -10,7 +10,7 @@ import projects from './routes/projects';
 dotenv.config();
 const app = express();
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'build', 'public')));
 app.use(cookieParser());
 app.use(express.json());
 
@@ -39,7 +39,7 @@ app.get('/', (req, res) => {
     // Prevent the back button from caching results for consistent themes.
     res.setHeader('Cache-Control', 'no-cache, no-store');
     const suffix = '_' + req.theme + '.html';
-    res.sendFile(path.join(__dirname, 'views', 'index' + suffix));
+    res.sendFile(path.join(__dirname, 'build', 'public', 'index' + suffix));
 });
 
 app.post('/theme', (req, res) => {

@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
     // Prevent the back button from caching results for consistent themes.
     res.setHeader('Cache-Control', 'no-cache, no-store');
     const suffix = '_' + req.theme + '.html';
-    res.sendFile(path.join(__dirname, '..', 'views', 'projects' + suffix));
+    res.sendFile(path.join(__dirname, '..', 'build', 'public', 'projects' + suffix));
 });
 
 export default router;
