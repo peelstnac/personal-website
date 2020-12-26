@@ -1,0 +1,14 @@
+#back-project-page {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+
+  background: linear-gradient(135deg, #24c6dc, #514a9d);
+  clip-path: polygon(100% 0px, 100% 38.2%, 61.8% 61.8%, 0px 28.2%, 0px 0px);
+}
+
+body {
+  background-color: #fffdfd;
+}

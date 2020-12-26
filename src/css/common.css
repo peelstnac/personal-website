@@ -1,7 +1,22 @@
+body {
+  opacity: 0;
+  margin: 0;
+  padding: 0;
+
+  background-color: var(--color-primary);
+
+  -webkit-transition: opacity 1s ease-in;
+  -moz-transition: opacity 1s ease-in;
+  -ms-transition: opacity 1s ease-in;
+  -o-transition: opacity 1s ease-in;
+  transition: opacity 1s ease-in;
+}
+
 .light {
   --color-primary: #fffdfd;
   --color-secondary: #1b1b1b;
   --color-hover: #e34234;
+  --color-highlight: #0091ad;
 }
 
 .dark {

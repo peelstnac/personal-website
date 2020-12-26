@@ -46,6 +46,12 @@ module.exports = {
             chunks: ['shared', 'index'],
             scriptLoading: 'blocking'
         }),
+        new HtmlWebpackPlugin({
+            filename: 'projects_light.html',
+            template: './templates/projects_light.html',
+            chunks: ['shared', 'projects'],
+            scriptLoading: 'blocking'
+        }),
         new MiniCssExtractPlugin({
             filename: '[name].[contenthash].bundle.css'
         }),

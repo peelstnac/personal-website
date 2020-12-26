@@ -1,4 +1,4 @@
-import fade from './fade';
+import fade from '../common/fade';
 import { toggleTheme } from '../common/theme';
 import '../../css/common.css';
 import '../../css/index.css';
