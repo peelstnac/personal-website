@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 
@@ -12,24 +19,36 @@
 }
 
 #front-title-page {
-  position: relative;
+  position: absolute;
   width: 100vw;
   height: 100vh;
+  top: 0;
+  left: 0;
+
+  display: -webkit-box;
+
+  display: -ms-flexbox;
 
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 
   font-family: "Rubik", sans-serif;
   text-align: center;
   color: var(--color-secondary);
-  background-color: inherit;
 
   -webkit-transition: background-color 0.5s ease-in-out, color 1s ease-in-out;
-  -moz-transition: background-color 0.5s ease-in-out, color 1s ease-in-out;
-  -ms-transition: background-color 0.5s ease-in-out, color 1s ease-in-out;
+
   -o-transition: background-color 0.5s ease-in-out, color 1s ease-in-out;
+
   transition: background-color 0.5s ease-in-out, color 1s ease-in-out;
+
+  z-index: 1;
 }
 
 .title h1 {
@@ -42,15 +61,30 @@
 }
 
 .icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: var(--icons-flex-direction);
   flex-direction: var(--icons-flex-direction);
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 
 .icon {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 
   text-decoration: none;
@@ -61,6 +95,10 @@
 .icon span {
   color: var(--color-secondary);
 
+  -webkit-transition: color 1s ease-in-out;
+
+  -o-transition: color 1s ease-in-out;
+
   transition: color 1s ease-in-out;
 }
 
@@ -68,8 +106,6 @@
   color: var(--color-hover);
 
   -webkit-transition: color 0.5s ease-in-out;
-  -moz-transition: color 0.5s ease-in-out;
-  -ms-transition: color 0.5s ease-in-out;
   -o-transition: color 0.5s ease-in-out;
   transition: color 0.5s ease-in-out;
 }
@@ -83,6 +119,8 @@
   position: absolute;
   bottom: 10px;
   left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
   transform: translateX(-50%);
 
   font-family: "Roboto", sans-serif;
@@ -90,4 +128,199 @@
 
 #toggle-theme p {
   margin: 0 0 10px 0;
+  background-color: #1b1b1b;
+}
+
+.scene-wrapper {
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+.layer,
+#scene {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.layer {
+  -webkit-transition: opacity 2s ease-in-out;
+  -o-transition: opacity 2s ease-in-out;
+  transition: opacity 2s ease-in-out;
+}
+
+.bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200vw;
+  height: 200vh;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+
+  z-index: -6;
+
+  -webkit-filter: brightness(50%);
+
+  filter: brightness(50%);
+}
+
+.bg-light {
+  background: rgba(243, 255, 174, 1) 0%;
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    from(rgba(243, 255, 174, 1)),
+    color-stop(50%, rgba(255, 208, 151, 1)),
+    to(rgba(234, 97, 189, 1))
+  );
+  background: -o-linear-gradient(
+    bottom,
+    rgba(243, 255, 174, 1) 0%,
+    rgba(255, 208, 151, 1) 50%,
+    rgba(234, 97, 189, 1) 100%
+  );
+  background: linear-gradient(
+    0deg,
+    rgba(243, 255, 174, 1) 0%,
+    rgba(255, 208, 151, 1) 50%,
+    rgba(234, 97, 189, 1) 100%
+  );
+}
+
+.bg-dark {
+  background: rgba(25, 170, 191, 1) 0%;
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    from(rgba(25, 170, 191, 1)),
+    color-stop(50%, rgba(85, 64, 202, 1)),
+    to(rgba(42, 30, 129, 1))
+  );
+  background: -o-linear-gradient(
+    bottom,
+    rgba(25, 170, 191, 1) 0%,
+    rgba(85, 64, 202, 1) 50%,
+    rgba(42, 30, 129, 1) 100%
+  );
+  background: linear-gradient(
+    0deg,
+    rgba(25, 170, 191, 1) 0%,
+    rgba(85, 64, 202, 1) 50%,
+    rgba(42, 30, 129, 1) 100%
+  );
+}
+
+.stars {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: absolute;
+  width: max(110vw, 200vh);
+  left: -5%;
+  top: -5%;
+
+  z-index: -5;
+}
+
+.stars img {
+  justify-self: flex-start;
+  width: 100%;
+}
+
+.floating {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: absolute;
+  width: max(110vw, 200vh);
+  left: 50%;
+  top: -5%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+
+  z-index: -2;
+}
+
+.floating img {
+  justify-self: flex-start;
+  width: 100%;
+
+  -webkit-filter: brightness(70%);
+
+  filter: brightness(70%);
+}
+
+.p1 {
+  position: absolute;
+  top: 5vh;
+  left: 5vh;
+  width: max(20vw, 30vh);
+
+  z-index: -3;
+}
+
+.p1 img {
+  width: 100%;
+  -webkit-filter: var(--drop-shadow);
+  filter: var(--drop-shadow);
+  -webkit-transition: -webkit-filter 2s ease-in-out;
+  transition: -webkit-filter 2s ease-in-out;
+  -o-transition: filter 2s ease-in-out;
+  transition: filter 2s ease-in-out;
+  transition: filter 2s ease-in-out, -webkit-filter 2s ease-in-out;
+}
+
+.p2 {
+  position: absolute;
+  top: 5vh;
+  right: 5vh;
+  width: max(calc(20vw / 3), calc(30vh / 3));
+
+  z-index: -4;
+}
+
+.p2 img {
+  width: 100%;
+  -webkit-filter: brightness(50%);
+  filter: brightness(50%);
+}
+
+.fg {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: absolute;
+  width: max(115vw, 200vh);
+  left: 50%;
+  bottom: -7%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+
+  z-index: -1;
+}
+
+.fg img {
+  justify-self: flex-end;
+  width: 100%;
+  -webkit-filter: brightness(70%);
+  filter: brightness(70%);
 }

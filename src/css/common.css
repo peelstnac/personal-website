@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 body {
   opacity: 0;
   margin: 0;
@@ -5,24 +12,51 @@ body {
 
   background-color: var(--color-primary);
 
-  -webkit-transition: opacity 1s ease-in;
-  -moz-transition: opacity 1s ease-in;
-  -ms-transition: opacity 1s ease-in;
-  -o-transition: opacity 1s ease-in;
-  transition: opacity 1s ease-in;
+  -webkit-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
 }
 
 .light {
   --color-primary: #fffdfd;
-  --color-secondary: #1b1b1b;
+  --color-secondary: #fffdfd;
   --color-hover: #e34234;
-  --color-highlight: #0091ad;
+  --bg: linear-gradient(
+    0deg,
+    rgba(243, 255, 174) 0%,
+    rgba(255, 208, 151) 50%,
+    rgba(234, 97, 189) 100%
+  );
+  --bg-fallback: rgba(243, 255, 174, 1) 0%;
+  --op-l: 1;
+  --op-d: 0;
+  --drop-shadow: drop-shadow(5px 5px 5px rgb(0, 221, 255))
+    drop-shadow(20px 20px 20px rgba(25, 169, 191, 0.33)) brightness(90%);
 }
 
 .dark {
   --color-primary: #1b1b1b;
-  --color-secondary: #fffdfd;
+  --color-secondary: #f0e100;
   --color-hover: #f0e100;
+  --bg: linear-gradient(
+    0deg,
+    rgba(25, 170, 191) 0%,
+    rgba(85, 64, 202) 50%,
+    rgba(42, 30, 129) 100%
+  );
+  --bg-fallback: rgba(25, 170, 191, 1) 0;
+  --op-l: 0;
+  --op-d: 1;
+  --drop-shadow: drop-shadow(5px 5px 5px rgba(227, 66, 52))
+    drop-shadow(20px 20px 20px rgba(161, 49, 38, 0.33)) brightness(90%);
+}
+
+.op-l {
+  opacity: var(--op-l);
+}
+
+.op-d {
+  opacity: var(--op-d);
 }
 
 /* 
@@ -60,6 +94,7 @@ Slider from w3schools.
   bottom: 0;
   background-color: #ccc;
   -webkit-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
 }
 
@@ -72,6 +107,7 @@ Slider from w3schools.
   bottom: 4px;
   background-color: var(--color-primary);
   -webkit-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
 }
 
@@ -80,6 +116,7 @@ input:checked + .slider {
 }
 
 input:focus + .slider {
+  -webkit-box-shadow: 0 0 1px var(--color-hover);
   box-shadow: 0 0 1px var(--color-hover);
 }
 

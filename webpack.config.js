@@ -25,8 +25,19 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.html$/i,
+                loader: 'html-loader',
+            },
+            {
                 test: /\.css/i,
                 use: [MiniCssExtractPlugin.loader, 'css-loader']
+            },
+            {
+                test: /\.png/i,
+                loader: 'file-loader',
+                options: {
+                    name: '[name].[contenthash].[ext]'
+                }
             }
         ]
     },

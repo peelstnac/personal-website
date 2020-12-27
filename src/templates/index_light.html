@@ -1,71 +1,141 @@
 <!DOCTYPE html>
 <html lang="en-US">
-    <head>
-        <meta charset="utf-8">
-        <meta name="author" content="Freeman Cheng">
-        <meta name="description" content="Freeman Cheng's personal website.">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <script src="https://kit.fontawesome.com/7a9b915c3d.js" crossorigin="anonymous"></script>
 
-        <title>
-            Freeman Cheng
-        </title>
-    </head>
-    <body class="light">
-        <div id="front-title-page">
-            <div class="title">
-                <h1>
-                    Hi, my name is Freeman Cheng.
-                </h1>
-                <h2>
-                    Welcome to my website.
-                </h2>                  
-            </div>        
-            <div class="icons">
-                <a href="/resume" class="icon">
-                    <span>
-                        <i class="far fa-file-pdf fa-3x"></i>
-                    </span>
-                    <p>
-                        Resume
-                    </p>
-                </a>
-                <a href="/projects" class="icon">
-                    <span>
-                        <i class="far fa-folder-open fa-3x"></i>
-                    </span>
-                    <p>
-                        Projects
-                    </p>
-                </a>
-                <a href="https://github.com/peelstnac" class="icon">
-                    <span>
-                        <i class="fab fa-github-square fa-3x"></i>
-                    </span>
-                    <p>
-                        Github
-                    </p>
-                </a>
-                <a href="/notes" class="icon">
-                    <span>
-                        <i class="far fa-clipboard fa-3x"></i>
-                    </span>
-                    <p>
-                        Notes
-                    </p>
-                </a>
-            </div>
-            
-            <div id="toggle-theme">
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Freeman Cheng">
+    <meta name="description" content="Freeman Cheng's personal website.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://kit.fontawesome.com/7a9b915c3d.js" crossorigin="anonymous"></script>
+
+    <title>
+        Freeman Cheng
+    </title>
+</head>
+
+<body class="light">
+    <div id="front-title-page" class="title-page">
+        <div class="title">
+            <h1>
+                Hi, my name is Freeman Cheng.
+            </h1>
+            <h2>
+                Welcome to my website.
+            </h2>
+        </div>
+        <div class="icons">
+            <a href="/resume" class="icon">
+                <span>
+                    <i class="far fa-file-pdf fa-3x"></i>
+                </span>
                 <p>
-                    Toggle theme!
+                    Resume
                 </p>
-                <label class="switch">
-                    <input id="toggle-theme-input" type="checkbox" autocomplete="off">
-                    <span class="slider round"></span>
-                </label>
+            </a>
+            <a href="/projects" class="icon">
+                <span>
+                    <i class="far fa-folder-open fa-3x"></i>
+                </span>
+                <p>
+                    Projects
+                </p>
+            </a>
+            <a href="https://github.com/peelstnac" class="icon">
+                <span>
+                    <i class="fab fa-github-square fa-3x"></i>
+                </span>
+                <p>
+                    Github
+                </p>
+            </a>
+            <a href="/notes" class="icon">
+                <span>
+                    <i class="far fa-clipboard fa-3x"></i>
+                </span>
+                <p>
+                    Notes
+                </p>
+            </a>
+        </div>
+
+        <div id="toggle-theme">
+            <p>
+                Toggle theme!
+            </p>
+            <label class="switch">
+                <input id="toggle-theme-input" type="checkbox" autocomplete="off">
+                <span class="slider round"></span>
+            </label>
+        </div>
+    </div>
+
+    <div class="scene-wrapper">
+        <div id="scene">
+
+            <div data-depth="0.1" class="layer">
+                <div class="bg bg-dark"></div>
+            </div>
+            <div data-depth="0.1" class="layer op-l">
+                <div class="bg bg-light"></div>
+            </div>
+
+            <div data-depth="0.1" class="layer">
+                <div class="stars">
+                    <img src="../assets/stars-dark.png">
+                </div>
+            </div>
+            <div data-depth="0.1" class="layer op-l">
+                <div class="stars">
+                    <img src="../assets/stars-light.png">
+                </div>
+            </div>
+
+            <div data-depth="0.2" class="layer">
+                <div class="p1">
+                    <img src="../assets/p1-dark.png">
+                </div>
+            </div>
+            <div data-depth="0.2" class="layer op-l">
+                <div class="p1">
+                    <img src="../assets/p1-light.png">
+                </div>
+            </div>
+
+            <div data-depth="0.1" class="layer">
+                <div class="p2">
+                    <img src="../assets/p2-dark.png">
+                </div>
+            </div>
+            <div data-depth="0.1" class="layer op-l">
+                <div class="p2">
+                    <img src="../assets/p2-light.png">
+                </div>
+            </div>
+
+            <div data-depth="0.3" class="layer">
+                <div class="floating">
+                    <img src="../assets/floating-dark.png">
+                </div>
+            </div>
+            <div data-depth="0.3" class="layer op-l">
+                <div class="floating">
+                    <img src="../assets/floating-light.png">
+                </div>
+            </div>
+
+            <div data-depth="0.6" class="layer">
+                <div class="fg">
+                    <img src="../assets/fg-dark.png">
+                </div>
+            </div>
+            <div data-depth="0.6" class="layer op-l">
+                <div class="fg">
+                    <img src="../assets/fg-light.png">
+                </div>
             </div>
         </div>
-    </body>
+    </div>
+</body>
+
 </html>
