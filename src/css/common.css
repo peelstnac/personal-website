@@ -36,7 +36,7 @@ body {
 
 .dark {
   --color-primary: #1b1b1b;
-  --color-secondary: #f0e100;
+  --color-secondary: #fffdfd;
   --color-hover: #f0e100;
   --bg: linear-gradient(
     0deg,
