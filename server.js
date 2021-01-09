@@ -6,6 +6,7 @@ import cookieParser from 'cookie-parser';
 import path from 'path';
 // Import routes.
 import projects from './routes/projects';
+import resume from './routes/resume';
 
 dotenv.config();
 const app = express();
@@ -53,6 +54,8 @@ app.post('/theme', (req, res) => {
 
 // Mount routes.
 app.use('/projects', projects);
+app.use('/resume', resume);
+
 
 app.listen(process.env.PORT, () => {
     console.log(`Listening on port ${process.env.PORT}`);
